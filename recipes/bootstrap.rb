@@ -25,8 +25,8 @@ node.default['chef-server-cluster']['bootstrap']['enable'] = true
 
 # TODO: (jtimberman) chef_vault_item. We sort this so we don't
 # get regenerated content in the private-chef-secrets.json later.
-chef_secrets      = Hash[data_bag_item('secrets', "private-chef-secrets-#{node.chef_environment}")['data'].sort]
-reporting_secrets = Hash[data_bag_item('secrets', "opscode-reporting-secrets-#{node.chef_environment}")['data'].sort]
+chef_secrets      = Hash[data_bag_item('secrets', "private-chef-secrets-production")['data'].sort]
+reporting_secrets = Hash[data_bag_item('secrets', "opscode-reporting-secrets-production")['data'].sort]
 
 # It's easier to deal with a hash rather than a data bag item, since
 # we're not going to need any of the methods, we just need raw data.
